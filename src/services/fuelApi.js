@@ -14,7 +14,7 @@ export const FUEL_OPTIONS = [
 
 export async function fetchStations() {
   // Endpoint habitual: /EstacionesTerrestres/
-  const url = '/api/EstacionesTerrestres/'
+  const url = '/api/EstacionesTerrestres'
 
   const res = await fetch(url, { headers: { 'Accept': 'application/json' } })
   if (!res.ok) {
