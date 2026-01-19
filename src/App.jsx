@@ -35,7 +35,15 @@ export default function App() {
 
     setLoading(true)
     try {
-      const raw = await fetchStations()
+      const raw = await fetchStations({
+      lat,
+      lon,
+      radiusKm: filters.radiusKm,
+      maxResults: filters.maxResults,
+      includeBrands: filters.includeBrands,
+      excludeBrands: filters.excludeBrands
+    })
+
       const normalized = normalizeStationList(raw)
       
       const ranked = filterAndRankStations(normalized, { ...filters, origin: { lat, lon } })
